@@ -26,6 +26,7 @@ role_whitelist = [
     182109121150058496, # Western_Canada
 ]
 
+
 role_match = {}
 
 silph_bot = Bot(command_prefix="!")
@@ -95,4 +96,4 @@ if __name__ == '__main__':
     if not token:
          raise Exception('DISCORD_KEY is not set')
 
-    silph_bot.run()
+    silph_bot.run(token)
