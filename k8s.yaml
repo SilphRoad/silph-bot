@@ -1,0 +1,33 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: silph-bot
+  name: silph-bot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: silph-bot
+  strategy: {}
+  minReadySeconds: 10
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: silph-bot
+    spec:
+      containers:
+      - image: silph/silph-bot:v0
+        env:
+        - name: DISCORD_KEY
+          valueFrom:
+            secretKeyRef:
+              name: silph-bot
+              key: key
+        imagePullPolicy: Always
+        name: silph-bot
+        resources: {}
+      restartPolicy: Always
+      serviceAccountName: ""
