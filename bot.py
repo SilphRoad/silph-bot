@@ -87,6 +87,10 @@ async def working(ctx, *, status : str):
     return await silph_bot.change_presence(game=discord.Game(name=status))
 
 
+@silph_bot.command(pass_context=True)
+async def map(ctx):
+    await ctx.send('The Silph League is a global player network for Pokemon GO that enables large-scale coordination and events! You can view the map of local groups here: https://thesilphroad.com/map')
+
 
 if __name__ == '__main__':
     import os
