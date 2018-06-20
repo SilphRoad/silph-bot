@@ -89,7 +89,11 @@ async def working(ctx, *, status : str):
 
 @silph_bot.command(pass_context=True)
 async def map(ctx):
-    await ctx.send('The Silph League is a global player network for Pokemon GO that enables large-scale coordination and events! You can view the map of local groups here: https://thesilphroad.com/map')
+    await ctx.send(
+        'The Silph League is a global player network for Pokemon GO that '
+        'enables large-scale coordination and events! You can view the map '
+        'of local groups here: https://thesilphroad.com/map'
+    )
 
 
 if __name__ == '__main__':

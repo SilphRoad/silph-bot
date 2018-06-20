@@ -1,1 +1,2 @@
-discord.py==0.16.8
+# Latest discord.py
+git+https://github.com/rapptz/discord.py.git@rewrite
