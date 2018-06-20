@@ -44,17 +44,17 @@ def get_role(ch):
 
 @silph_bot.event
 async def on_ready():
-    for s in silph_bot.servers:
+    for s in silph_bot.guilds:
         build_roles(s.roles)
 
-    await silph_bot.change_presence(game=discord.Game(name='Pokemon Go'))
+    await silph_bot.change_presence(activity=discord.Game(name='Pokemon Go'))
     print("Bot is active")
 
 
 @silph_bot.command(pass_context=True)
 async def silphbot(ctx, channel):
     channel_id = channel.replace('<#', '').replace('>', '')
-    name = ctx.message.server.get_channel(channel_id)
+    name = ctx.message.guild.get_channel(int(channel_id))
 
     if not name:
         return
@@ -66,8 +66,8 @@ async def silphbot(ctx, channel):
         print("{} is not a role".format(name))
         return
 
-    await silph_bot.add_roles(ctx.message.author, role)
-    await silph_bot.add_reaction(ctx.message, u"\U0001F44B")
+    await ctx.message.author.add_roles(role)
+    await ctx.message.add_reaction(u"\U0001F44B")
     print("{} joined {}".format(ctx.message.author, role.name))
 
 
