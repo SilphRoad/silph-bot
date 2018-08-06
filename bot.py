@@ -95,6 +95,15 @@ async def map(ctx):
     )
 
 
+@silph_bot.command(pass_context=True)
+async def atlas(ctx):
+    await ctx.send(
+        'The Silph Atlas is a global community tool for reporting nests in Pokemon '
+        'Go. Check the map at : https://thesilphroad.com/atlas and report nests '
+        'around you !'
+    )
+
+
 if __name__ == '__main__':
     import os
 
