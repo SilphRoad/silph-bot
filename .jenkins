@@ -55,10 +55,10 @@ pipeline {
 
       post {
         success {
-          discordSend description: getChangeLog(), title: "silph-bot ${env.TAG_NAME} has been deployed", result: 'SUCCESS', link: "${env.RUN_DISPLAY_URL}", footer: 'build.silph.io', webhookURL: 'https://discordapp.com/api/webhooks/752970236331819081/TdglUImHWn5Xttzp1faEC9EKw82plrsdkRj92r9XjNGOmyjdgNXTqFgizlpdUEHp0Wbd'
+          discordSend description: "", title: "silph-bot ${env.TAG_NAME} has been deployed", result: 'SUCCESS', link: "${env.RUN_DISPLAY_URL}", footer: 'build.silph.io', webhookURL: 'https://discordapp.com/api/webhooks/752970236331819081/TdglUImHWn5Xttzp1faEC9EKw82plrsdkRj92r9XjNGOmyjdgNXTqFgizlpdUEHp0Wbd'
         }
         failure {
-          discordSend description: getChangeLog(), title: "silph-bot ${env.TAG_NAME} failed deploy", result: 'FAILURE', footer: 'build.silph.io', link: "${env.RUN_DISPLAY_URL}", webhookURL: 'https://discordapp.com/api/webhooks/752970236331819081/TdglUImHWn5Xttzp1faEC9EKw82plrsdkRj92r9XjNGOmyjdgNXTqFgizlpdUEHp0Wbd'
+          discordSend description: "", title: "silph-bot ${env.TAG_NAME} failed deploy", result: 'FAILURE', footer: 'build.silph.io', link: "${env.RUN_DISPLAY_URL}", webhookURL: 'https://discordapp.com/api/webhooks/752970236331819081/TdglUImHWn5Xttzp1faEC9EKw82plrsdkRj92r9XjNGOmyjdgNXTqFgizlpdUEHp0Wbd'
         }
       }
     }
