@@ -9,7 +9,7 @@ pipeline {
   environment {
     IMAGE_NAME = 'silph/silph-bot'
     IMAGE_TAG = getTagName()
-    DEPLOY = 'deploy/silph-gg'
+    DEPLOY = 'deploy/silph-bot'
   }
 
   stages {
