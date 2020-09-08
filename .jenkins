@@ -50,7 +50,7 @@ pipeline {
       }
 
       steps {
-        sh 'kubectl --namespace $NAMESPACE set image $DEPLOY silph-gg=$IMAGE_NAME:$TAG_NAME'
+        sh 'kubectl --namespace $NAMESPACE set image $DEPLOY silph-bot=$IMAGE_NAME:$TAG_NAME'
       }
 
       post {
