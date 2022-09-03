@@ -27,8 +27,8 @@ role_whitelist = [
 
 
 role_match = {}
-
-silph_bot = Bot(command_prefix="!")
+intents = discord.Intents.default()
+silph_bot = Bot(intents=intents,command_prefix="!")
 
 
 def build_roles(roles):
